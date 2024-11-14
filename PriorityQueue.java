@@ -1,7 +1,7 @@
 
 /******************************************************************
  *
- *   YOUR NAME / SECTION NUMBER
+ *   Alisa Samakhval COMP 272 - 001
  *
  *   Note, additional comments provided throughout this source code
  *   is for educational purposes
@@ -151,8 +151,11 @@ class PriorityQueue<E, P> {
 
     public Node add(E e, P priority) {
 
-        // YOUR CODE GOES HERE
-        return null;
+        Node newNode = new Node(e, priority, tree.size()) ;
+        tree.add(newNode);
+        pullUp(tree.size()-1);
+        return newNode;
+
     }
 
 
@@ -168,7 +171,11 @@ class PriorityQueue<E, P> {
 
     public boolean contains(E e) {
 
-        // ADD YOUR CODE HERE
+        for (Node node : tree) {
+            if (node.value.equals(e)) {
+                return true;
+            }
+        }
         return false;
     }
 
